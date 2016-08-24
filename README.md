@@ -1,5 +1,5 @@
 # logging-http-client
-An [HTTPlug](http://httplug.io/) client that logs to a PSR3 logger.
+An [HTTPlug](http://httplug.io/) client that logs to a [PSR3](http://www.php-fig.org/psr/psr-3/) logger.
 
 Example usage:
 
@@ -12,3 +12,5 @@ $client = new \edr\LoggingHttpClient\LoggingHttpClient(
 
 $client->sendRequest( ... );
 ```
+
+Message formatting inspired by [log-http-messages](https://github.com/php-middleware/log-http-messages).
