@@ -5,6 +5,7 @@ namespace edr\LoggingHttpClientTests;
 use edr\LoggingHttpClient\LoggingHttpClient;
 use edr\LoggingHttpClient\MessageFormatter;
 use Http\Client\HttpClient;
+use Http\Message\Formatter;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
@@ -83,11 +84,11 @@ class LoggingHttpClientTest extends TestCase
     }
     
     /**
-     * @return MessageFormatter
+     * @return Formatter
      */
     private function getMockFormatter(RequestInterface $request, $requestString, ResponseInterface $response, $responseString)
     {
-        $formatter = $this->getMockForAbstractClass(MessageFormatter::class);
+        $formatter = $this->getMockForAbstractClass(Formatter::class);
         
         $formatter->expects($this->once())
             ->method('formatRequest')

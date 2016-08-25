@@ -3,6 +3,7 @@
 namespace edr\LoggingHttpClient;
 
 use Http\Client\HttpClient;
+use Http\Message\Formatter;
 use Psr\Http\Message\RequestInterface;
 use Psr\Log\LoggerInterface;
 
@@ -22,7 +23,7 @@ final class LoggingHttpClient implements HttpClient
     private $logger;
     
     /**
-     * @var MessageFormatter
+     * @var Formatter
      */
     private $formatter;
     
@@ -34,7 +35,7 @@ final class LoggingHttpClient implements HttpClient
     public function __construct(
         HttpClient $client,
         LoggerInterface $logger,
-        MessageFormatter $formatter,
+        Formatter $formatter,
         LogOptions $options = null
     ) {
         $this->client    = $client;
