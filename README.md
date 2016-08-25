@@ -15,5 +15,3 @@ $client = new \edr\LoggingHttpClient\LoggingHttpClient(
 
 $client->sendRequest( ... );
 ```
-
-Message formatting inspired by [log-http-messages](https://github.com/php-middleware/log-http-messages).
